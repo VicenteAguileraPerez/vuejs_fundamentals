@@ -1,0 +1,57 @@
+
+<!--
+    instancias
+    bind directive
+        v-bind:
+        :
+    loop and if
+        v-for
+        v-if
+
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <!---En cerrar todo en un container-->
+    <div id="app">
+        <h1 >{{titulo}}</h1>
+        <!--La directiva v-bind (dos puntos) o : es una de las directivas
+            más utilizadas y populares de Vue. Esta directiva permite
+            enlazar (bindear) una variable de Vue con un atributo específico
+            de una etiqueta HTML. De esta forma, podemos colocar como valor de
+            un atributo HTML el contenido que tengamos almacenado en una variable
+            de la lógica de Javascript.-->
+        <img :src="image" v-bind:alt="titulo">
+        <ul>
+            <li v-for="fruta of fruta">{{fruta}}</li>
+        </ul>
+        <hr>
+        <ul>
+            <li v-for="data of dataJson">
+                {{data.nombre}}-{{data.color}}
+                <span v-if='data.quantity===0'>-Sin Stock</span>
+            </li>
+           
+        </ul>
+        <hr>
+        <span v-bind:title="message">
+            {{message}}
+            Hover your mouse over me for a few seconds
+            to see my dynamically bound title!
+          </span>
+    </div>
+   
+
+    
+
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <script src="01.js"></script>
+</body>
+</html>
