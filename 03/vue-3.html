@@ -1,6 +1,6 @@
-<!--
-    buttons and list
-    v-on o tambien @click
+
+<!-- uso el v-model para inputs 
+
 -->
 <!DOCTYPE html>
 <html lang="en">
@@ -12,15 +12,12 @@
 </head>
 <body>
     <div id="app">
-        <button v-on:click="addItem">AddItem to Array</button>
-        <ol>
-            <span v-if="items.length===0">No Items to Look</span>
-            <li v-for="item of items" >
-                {{item}}
-            </li>
-        </ol>
+
+        <p>{{mensaje}}</p>
+        <input type="text" v-model="mensaje">
+
     </div>
     <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
-    <script src="02.js"></script>
+    <script src="03.js"></script>
 </body>
 </html>
