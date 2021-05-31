@@ -1,0 +1,47 @@
+
+<!--
+    listas for if
+    buttons v-on @click
+    inputs v-modal
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <div id="app">
+        <h1>Fruit's List</h1>
+        <input type="text" v-model="fruit" placeholder="Fruit" >
+        <br><br>
+        <input type="text" v-model="color" placeholder="Color">
+        <br><br>
+        <input type="number" v-model="quantity" placeholder="Quantity">
+        <br><br>
+        <button v-on:click="addFruit(quantity,color,fruit)">Add fruit</button>
+        <br><br>
+        <p  v-bind:title="mensaje">{{mensaje}}</p>
+
+        <hr>
+        <br>
+        <br>
+       
+        <span v-if="fruits.length===0">No Fruits Yet</span>
+        <ul>
+            <li v-for="fruit of fruits">{{fruit.fruit}}/{{fruit.color}}/{{fruit.quantity}}
+                <span v-if="fruit.quantity==0">NO MORE FRUITS</span>
+                <span v-if="fruit.quantity!=0">EAT FRUITS</span>
+            </li>
+        </ul>
+
+    </div>
+
+
+    <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
+    <script src="04.js"></script>
+</body>
+</html>
