@@ -62,6 +62,10 @@ Existen varias  **directivas en Vue**, las he dividido en varios grupos e iremos
 |`v-cloak`|No|Directiva que permanece hasta que la  `{{ template }}`  se renderiza con contenido.
 |`v-model`|**Sí**|Enlaza el valor de una variable con un  `<input>`,  `<select>`,  `<textarea>`  o un componente.
 
+# Sintaxis de plantillas (mustache)
+
+**Vue**  nos permite hacer referencia a las variables (_o métodos, propiedades computadas, etc..._) de  **Vue**  desde la parte de templates, simplemente escribiéndolo entre  `{{ dobles llaves }}`, lo que se conoce como  **sintaxis de plantillas**  o  **formato mustache**, en referencia a uno de los primeros sistemas de plantillas de Javascript:  [mustache](https://mustache.github.io/).
+
 # SPA: Single Page Application
 
 En el lado opuesto se encuentran las páginas de tipo  **SPA**  (_Single Page Application_). Se trata de un enfoque más moderno, donde el navegador se descarga una versión mínima de  `.html`  junto a un  `.js`  que se encargará de controlar toda la web. Realizará peticiones de los archivos relacionados junto a peticiones a archivos  `.json`  o  `.js`  con más información o nuevos contenidos, que mostrará en el navegador parcial o completamente, pero sin la necesidad obligatoria de recargar la página completamente.
