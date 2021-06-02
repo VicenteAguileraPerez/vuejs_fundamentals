@@ -1,6 +1,6 @@
 # Vue framework fundamentals
 # ¿Qué es Vue?!
-[Vue el framework para hacer frontend](00-Documents/vuejs.png)
+![Vue el framework para hacer frontend](00-Documents/vuejs.png)
 
 **Vue.js**  (_también llamado Vue o VueJS_) es un  **framework progresivo**  Javascript para crear interfaces de usuario, o en otras palabras, se trata de una «capa» añadida a Javascript formada por herramientas, convenciones de trabajo y un lenguaje particular que nos permite crear aplicaciones de forma rápida, agradable, sencilla y muy práctica.
 
