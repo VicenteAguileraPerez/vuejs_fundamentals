@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /*https://code.tutsplus.com/es/tutorials/the-30-css-selectors-you-must-memorize--net-16048
+            * select all the childs of cloak value an set none display
+        */
+        [v-cloak]>* {
+            display: none;
+        }
+
+        [v-cloak]::before {
+            content: "loading... click button USE  TO CLOAK";
+        }
+    </style>
+</head>
+
+<body>
+    <div id="appCloak" v-cloak>
+        <!--
+        Directivas basicas
+        v-clock-> es un atributo que podemos ponerle a un elemento HTML para que Vue, 
+        lo elimine automáticamente cuando las plantillas que contenga, se haya procesado.
+        Es decir, el atributo v-cloak permanecerá y cuando se haya cargado completamente, 
+        se eliminará de la etiqueta.
+        agregando esto en el contenedor principal, encuentro que no está repitiendo el código manteniéndolo SECO.
+        -->
+        <h1>My Great Vue App</h1>
+        <p>
+            How are you, {{name}}?
+        </p>
+    </div>
+    <br>
+    <button onclick="loadApp()">Use to Cloak</button>
+    <hr>
+    <div id="app">
+        <!--
+            Vue nos permite realizar referencias a variables
+            metodos o propiedades computadas, etc...
+            de Vue desde la parte de templates, simplemente escribiéndolo entre
+            {{ dobles llaves}}, lo que se conoce como sintaxis de plantillas o
+            formato mustache. 
+        -->
+        <!--
+        Directivas basicas
+        v-text-> equivale a {{value}}
+        -->
+        <h1>{{mensaje}}</h1>
+        <h1 v-text="mensaje"></h1>
+        <button v-on:click="update">Mostrar mensaje</button>
+        <hr>
+
+        <!--
+        Directivas basicas
+        v-html-> muestra codigo html y funciona igual que v-text
+        -->
+        <div>{{mensaje2}}</div>
+        <!--Muestra literalmente el html-->
+        <div v-html="mensaje2"></div>
+        <button v-on:click="update2">Mostrar html</button>
+        <hr>
+        <!--
+        Directivas basicas
+        v-pre-> evita renderizar la plantilla
+        -->
+        <div>
+            <div>{{ mensajeOnce }}</div> <!-- Se renderiza al valor de nickname -->
+            <div v-pre>{{ mensajeOnce }}</div> <!-- No se renderiza -->
+        </div>
+
+        <hr>
+        <!--
+        Directivas basicas
+        v-once-> renderizar una vez la plantilla
+        -->
+        <h1 v-once>{{ mensajeOnce }}</h1> <!-- No se renderiza -->
+        <hr>
+        <hr>
+        <!--
+        Directivas basicas
+            v-model-> Esta directiva permite crear un modelo de datos bidireccional 
+            entre un elemento HTML concreto y una variable de Vue. ¿Qué significa esto? 
+            Significa que podemos sincronizar el contenido de una variable con el contenido
+            que tenga un elemento HTML <input> (por ejemplo) en su atributo value.
+            La directiva v-model puede funcionar con elementos <input>, pero también con elementos <select>, <textarea>
+            e incluso con componentes definidos por nosotros (que veremos un poco más adelante). 
+        -->
+        <h1 v-text="nombre"></h1>
+        <label>Nombre</label>
+        <input type="text" v-model="nombre" placeholder="Introduce tu nombre">
+        <!--
+            <label>Color</label>
+        <input type="color" v-model="nombre" placeholder="Introduce tu nombre">
+            -----------------------------------------------------------------------------------------
+            <label>Checkbox</label>
+            <input type="checkbox" v-model="nombre" placeholder="Introduce tu nombre">
+            -------------------------------------------------------------------------------------------
+             <input type="radio" v-model="nombre" placeholder="Introduce tu nombre" name="r" value="1">
+            <input type="radio" v-model="nombre" placeholder="Introduce tu nombre" name="r" value="0">
+        -->
+        <hr>
+        <div>
+            <!--.lazy	En lugar de actualizar en cada tecla (onInput), lo hace cuando el usuario cambia el foco (onChange).-->
+            <div>{{ nombre }}</div>
+            <textarea v-model.lazy="nombre" cols="80" rows="5"></textarea>
+        </div>
+        <!--
+              .number	Traduce el contenido de string a number (sólo si es un número válido).
+               .trim	Recorta los espacios en blanco a los lados del contenido de texto.
+          -->
+        <hr>
+        <div>
+            <label>Nombre</label>
+            <div>{{ nombre2 }}</div>
+            <input type="text" v-model.trim="nombre2" placeholder="Introduce tu nombre">
+        </div>
+
+        <hr>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
+    <script src="05.js"></script>
+</body>
+
+</html>
