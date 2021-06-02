@@ -1,5 +1,6 @@
 # Vue framework fundamentals
-# ¿Qué es Vue?![Vue el framework para hacer frontend](00-Documents/vuejs.png)
+# ¿Qué es Vue?!
+[Vue el framework para hacer frontend](00-Documents/vuejs.png)
 
 **Vue.js**  (_también llamado Vue o VueJS_) es un  **framework progresivo**  Javascript para crear interfaces de usuario, o en otras palabras, se trata de una «capa» añadida a Javascript formada por herramientas, convenciones de trabajo y un lenguaje particular que nos permite crear aplicaciones de forma rápida, agradable, sencilla y muy práctica.
 
@@ -27,6 +28,39 @@ Las características de  **Vue**  son las siguientes:
     
 -   **Vue**  le da mayor protagonismo al enfoque tradicional «centrado en  **HTML**» así como a los sistemas de plantillas. Si te gustan,  **Vue**  probablemente te resulte muy atractivo. Por otro lado, el enfoque de  **React**  se suele centrar más en programación pura en Javascript, utilizando HTML y CSS sólo como complementos que se añaden a Javascript.
 
+# Directivas de Vue
+
+Las  **directivas de Vue**  son atributos especiales que se colocan en las etiquetas HTML y están prefijados por  `v-`, como por ejemplo,  `v-for`,  `v-bind`  o  `v-on`, entre muchas otras. Estas directivas permiten realizar  **acciones dinámicas potentes**  (_bucles, condicionales, etc..._) que no se pueden realizar en HTML por si solo, pero que  **Vue**  permite utilizar en sus etiquetas  `<template>`.
+
+![directivas](00-Documents/directivas.png)
+
+Dichas  **directivas**  están formadas por varias partes:
+
+-   **Directiva**: El nombre de la directiva, que a veces, es posible abreviarlo con un carácter.
+-   **Argumento**: En ciertas directivas se indica un parámetro.
+-   **Modificador**: En ciertas directivas se puede modificar el comportamiento.
+-   **Valor**: En ciertas directivas, se requiere establecer un valor. Se escribe como el valor de un atributo HTML.
+Existen varias  **directivas en Vue**, las he dividido en varios grupos e iremos profundizando en ellas a lo largo de los siguientes capítulos y temas:
+
+
+
+|  Tipos de directivas  | Directivas | Descripción|
+|--|--|--|
+| **Directivas básicas** | `v-pre`,  `v-once`,  `v-model`... |Permite realizar tareas simples.|
+|**Directivas condicionales**|`v-show`,  `v-if`,  `v-else`...|Permiten realizar acciones según condiciones.
+|**Directivas de bucles**|`v-for`|Permiten realizar operaciones varias veces.
+|**Directivas avanzadas**|`v-bind`,  `v-on`,  `v-slot`|Permiten realizar tareas más específicas.
+|**Directivas personalizadas**||Directivas propias definidas por el usuario.
+
+## Directivas básicas
+| Directiva vue | Valor | Descripción|
+|--|--|--|
+|`v-text`|**Sí**|Equivalente a  `{{ texto }}`. Usa  `.textContent`  internamente.
+|`v-html`|**Sí**|Inserta HTML en un elemento sin procesarlo. Usa  `.innerHTML`  internamente.
+|`v-pre`|No|Mantiene las  `{{ templates }}`  del elemento intactas, sin renderizar.
+|`v-once`|No|Renderiza las  `{{ templates }}`  solo la primera vez, y no lo hace más.
+|`v-cloak`|No|Directiva que permanece hasta que la  `{{ template }}`  se renderiza con contenido.
+|`v-model`|**Sí**|Enlaza el valor de una variable con un  `<input>`,  `<select>`,  `<textarea>`  o un componente.
 
 # SPA: Single Page Application
 
