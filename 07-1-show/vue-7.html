@@ -1,0 +1,34 @@
+
+<!--
+    listas for if
+    buttons v-on @click
+    inputs v-modal
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <div id="app">
+       
+       <h1>Show Directive</h1>
+       <!--
+           La directiva v-show 
+            La directiva v-show se define como una directiva que muestra u oculta algo, 
+            dependiendo del valor boolean que tenga: si es true lo muestra, si es false lo oculta con CSS,
+            mediante un display: none. Un ejemplo para ilustrar esto:
+       -->
+       <div>
+            <a v-show="login">Bienvenido</a>
+       </div>
+
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
+    <script src="07-show.js"></script>
+</body>
+</html>

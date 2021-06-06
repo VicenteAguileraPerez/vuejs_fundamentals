@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <div id="app">
+        <!--
+            La directiva v-if hace algo muy parecedo a la v-show, pero tiene una diferencia
+            principal, ientras que v-show mantiene el codigo html y lo oculta o muestra con css
+            dependiendo del valor indicado, v-if evaluará la condición y si es falsa no
+            colocará en el html. Además, con v-id podemos usar v-else y / o v-else-if
+            por algo es más potente
+        -->
+        <h1>Bienvenido al sistema, tu estatus es: </h1>
+        <h2 v-if="login & admon">Eres un administrador</h2>
+        <h2 v-else-if="login">Identificado</h2>
+        <h2 v-else>No identificado</h2>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
+    <script src="07.js"></script>
+</body>
+</html>

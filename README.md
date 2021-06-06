@@ -62,6 +62,56 @@ Existen varias  **directivas en Vue**, las he dividido en varios grupos e iremos
 |`v-cloak`|No|Directiva que permanece hasta que la  `{{ template }}`  se renderiza con contenido.
 |`v-model`|**Sí**|Enlaza el valor de una variable con un  `<input>`,  `<select>`,  `<textarea>`  o un componente.
 
+## Directivas condicionales
+
+Las directivas de Vue  `v-show`  y  `v-if`  nos permiten establecer  **condiciones directamente en nuestro etiquetado HTML**, sin tener que recurrir a lógica Javascript o realizar código más complejo. Esto nos permite crear múltiples posibilidades directamente en nuestra parte del template, haciendo el código mucho más sencillo.
+
+![ciclos](00-Documents/for.png)
+
+|Directiva vue|Descripción|
+|--|--|
+|`v-show`|Muestra/oculta el elemento, alternando con un  `display: none`.|
+|`v-if`|Equivalente a un  `if`  de Javascript. Acepta una expresión Javascript por parámetro.|
+|`v-else-if`|Equivalente a un  `else if`  de Javascript. Acepta una expresión Javascript por parámetro.|
+|`v-else`|Equivalente a un  `else`  de Javascript. No tiene parámetros.|
+
+## Directivas de Ciclos
+La directiva  `v-for`  es muy interesante para  **crear estructuras repetitivas de código HTML**  de una forma sencilla y sin que el código resulte excesivamente complejo (_sobre todo en estructuras que se repiten muchas veces_).
+
+La estructura de un `v-for` es muy sencilla y se basa en la posibilidad de crear un **bucle for** desde las templates de código HTML de Vue. Teniendo en cuenta su sintaxis, puedes crear código complejo en muy pocas lineas, basado en el bucle **[forEach](https://developer.mozilla.org/es/docs/Web/JavaScript/Reference/Global_Objects/Array/forEach)**
+
+    
+
+`<div v-for="(item, index) in array" :key="index">{{ index }}. {{ item }}</div>`
+
+`<div v-for="(item, index) in array">{{ item }}</div>`
+
+|Ejemplo|Sintaxis avanzada|Descripción|
+|--|--|--|
+|`v-for="item in array"`|(item, index)|Iteramos por cada uno de los elementos del array.|
+|`v-for="item in object"`|(item, name, index)|Iteramos por cada una de las propiedades del objeto.|
+|`v-for="i in number"`|(item, index)|Iteramos en un bucle de  `1`  al número  `number`.|
+|`v-for="char in string"`|(item, index)|Iteramos por cada carácter del string.|
+**Modificadores de `v-model`**
+| Modificador |	Descripción |
+|--|--|
+| .lazy | En lugar de actualizar en cada tecla (onInput), lo hace cuando el usuario cambia el foco (onChange). |
+| .number |	Traduce el contenido de  a  (sólo si es un número válido). |
+| .trim	 | Recorta los espacios en blanco a los lados del contenido de texto. |
+
+# Directivas condicionales (v-show y v-if)
+
+Las directivas de Vue  `v-show`  y  `v-if`  nos permiten establecer  **condiciones directamente en nuestro etiquetado HTML**, sin tener que recurrir a lógica Javascript o realizar código más complejo. Esto nos permite crear múltiples posibilidades directamente en nuestra parte del template, haciendo el código mucho más sencillo.
+
+
+
+| Directiva | Descripción |
+|--|--|
+| `v-show` | Muestra/oculta el elemento, alternando con un  `display: none`. |
+| `v-if` | Equivalente a un  `if`  de Javascript. Acepta una expresión Javascript por parámetro. |
+| `v-else-if` | Equivalente a un  `else if`  de Javascript. Acepta una expresión Javascript por parámetro. |
+| `v-else` | Equivalente a un  `else`  de Javascript. No tiene parámetros. |
+
 # Sintaxis de plantillas (mustache)
 
 **Vue**  nos permite hacer referencia a las variables (_o métodos, propiedades computadas, etc..._) de  **Vue**  desde la parte de templates, simplemente escribiéndolo entre  `{{ dobles llaves }}`, lo que se conoce como  **sintaxis de plantillas**  o  **formato mustache**, en referencia a uno de los primeros sistemas de plantillas de Javascript:  [mustache](https://mustache.github.io/).
