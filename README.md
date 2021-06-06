@@ -66,7 +66,6 @@ Existen varias  **directivas en Vue**, las he dividido en varios grupos e iremos
 
 Las directivas de Vue  `v-show`  y  `v-if`  nos permiten establecer  **condiciones directamente en nuestro etiquetado HTML**, sin tener que recurrir a lógica Javascript o realizar código más complejo. Esto nos permite crear múltiples posibilidades directamente en nuestra parte del template, haciendo el código mucho más sencillo.
 
-![ciclos](00-Documents/for.png)
 
 |Directiva vue|Descripción|
 |--|--|
@@ -76,6 +75,7 @@ Las directivas de Vue  `v-show`  y  `v-if`  nos permiten establecer  **condicion
 |`v-else`|Equivalente a un  `else`  de Javascript. No tiene parámetros.|
 
 ## Directivas de Ciclos
+![ciclos](00-Documents/for.png)
 La directiva  `v-for`  es muy interesante para  **crear estructuras repetitivas de código HTML**  de una forma sencilla y sin que el código resulte excesivamente complejo (_sobre todo en estructuras que se repiten muchas veces_).
 
 La estructura de un `v-for` es muy sencilla y se basa en la posibilidad de crear un **bucle for** desde las templates de código HTML de Vue. Teniendo en cuenta su sintaxis, puedes crear código complejo en muy pocas lineas, basado en el bucle **[forEach](https://developer.mozilla.org/es/docs/Web/JavaScript/Reference/Global_Objects/Array/forEach)**
