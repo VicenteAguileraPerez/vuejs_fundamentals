@@ -99,18 +99,25 @@ La estructura de un `v-for` es muy sencilla y se basa en la posibilidad de crear
 | .number |	Traduce el contenido de  a  (sólo si es un número válido). |
 | .trim	 | Recorta los espacios en blanco a los lados del contenido de texto. |
 
-# Directivas condicionales (v-show y v-if)
+## Directivas v-on
+![escuchador de clicks](00-Documents/on.png)
+La directiva  `v-on`  (_abreviada como @_) es una directiva utilizada para gestionar los  **eventos del DOM**  desde los templates de Vue, haciendo más cómodo y práctico su utilización, permitiendo escribir mucho menos código. Así pues, nos ahorramos realizar  `.addEventListener()`, y en su lugar definimos las acciones de forma mucho más directa.
 
-Las directivas de Vue  `v-show`  y  `v-if`  nos permiten establecer  **condiciones directamente en nuestro etiquetado HTML**, sin tener que recurrir a lógica Javascript o realizar código más complejo. Esto nos permite crear múltiples posibilidades directamente en nuestra parte del template, haciendo el código mucho más sencillo.
+### Modificadores de v-on
+Al igual que otras directivas, es posible añadir  **modificadores**  después del tipo del evento y así modificar el comportamiento de la directiva. Algunos de los modificadores que podríamos utilizar, son los siguientes:
 
-
-
-| Directiva | Descripción |
+|Modificador|Descripción|
 |--|--|
-| `v-show` | Muestra/oculta el elemento, alternando con un  `display: none`. |
-| `v-if` | Equivalente a un  `if`  de Javascript. Acepta una expresión Javascript por parámetro. |
-| `v-else-if` | Equivalente a un  `else if`  de Javascript. Acepta una expresión Javascript por parámetro. |
-| `v-else` | Equivalente a un  `else`  de Javascript. No tiene parámetros. |
+|`.stop`|Llama al método  `event.stopPropagation()`  para parar la propagación del evento.|
+|`.prevent`|Llama al método  `event.preventDefault()`  para evitar el comportamiento por defecto.|
+|`.capture`|Utiliza el modo  `capture`  del  `.addEventListener()`.|
+|`.self`|Sólo se dispara si el evento es generado desde el propio elemento.|
+|`.once`|Sólo se dispara la primera vez. Equivalente al parámetro  `{ once: true }`.|
+`.passive`|Realiza una escucha pasiva. Equivalente al parámetro  `{ passive: true }`.|
+
+## Directivas v-bind
+![dos puntos](00-Documents/bind.png)
+La directiva v-bind (dos puntos) es una de las directivas más utilizadas y populares de Vue. Esta directiva permite enlazar (bindear) una variable de Vue con un atributo específico de una etiqueta HTML. De esta forma, podemos colocar como valor de un atributo HTML el contenido que tengamos almacenado en una variable de la lógica de Javascript.
 
 # Sintaxis de plantillas (mustache)
 
