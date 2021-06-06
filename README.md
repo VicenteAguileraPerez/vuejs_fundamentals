@@ -100,7 +100,9 @@ La estructura de un `v-for` es muy sencilla y se basa en la posibilidad de crear
 | .trim	 | Recorta los espacios en blanco a los lados del contenido de texto. |
 
 ## Directivas v-on
+
 ![escuchador de clicks](00-Documents/on.png)
+
 La directiva  `v-on`  (_abreviada como @_) es una directiva utilizada para gestionar los  **eventos del DOM**  desde los templates de Vue, haciendo más cómodo y práctico su utilización, permitiendo escribir mucho menos código. Así pues, nos ahorramos realizar  `.addEventListener()`, y en su lugar definimos las acciones de forma mucho más directa.
 
 ### Modificadores de v-on
@@ -116,7 +118,9 @@ Al igual que otras directivas, es posible añadir  **modificadores**  después d
 `.passive`|Realiza una escucha pasiva. Equivalente al parámetro  `{ passive: true }`.|
 
 ## Directivas v-bind
+
 ![dos puntos](00-Documents/bind.png)
+
 La directiva v-bind (dos puntos) es una de las directivas más utilizadas y populares de Vue. Esta directiva permite enlazar (bindear) una variable de Vue con un atributo específico de una etiqueta HTML. De esta forma, podemos colocar como valor de un atributo HTML el contenido que tengamos almacenado en una variable de la lógica de Javascript.
 
 # Sintaxis de plantillas (mustache)
